@@ -12,8 +12,8 @@ function App() {
       const result = await axios.get(url);
       setGlobal(result.data.Global);
       let date = new Date(result.data.Global.Date);
-
-      setDate(date.toString());
+      date = date.toString().split(' ');
+      setDate(date.slice(0, 5).join(' '));
     }
     getGlobal();
   }, [date]);
