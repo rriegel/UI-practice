@@ -10,6 +10,7 @@ function Wrapper (props) {
     items.forEach(b => (b.active = false));
     d.active = true;
     setItems([...items]);
+    props.handleRedirect(d);
   }
   return (
     <div className="MenuWrapper">

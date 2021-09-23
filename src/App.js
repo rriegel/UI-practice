@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
@@ -8,7 +8,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 function App() {
-  // const [view, setView] = useState("Home");
+  const [view, setView] = useState("Home");
 
   const [date, setDate] = useState("");
   useEffect(() => {
@@ -22,15 +22,27 @@ function App() {
     getGlobal();
   }, [date]);
 
+  const onRedirect = (d) => {
+    setView(d.label);
+  };
+
+  const renderView = () => {
+    if (view === "Home") {
+      return( <Home />)
+    } else if (view === "About") {
+      return <Contact />
+    } else {
+      return <About />
+    }
+  };
+
   console.log(global);
   // menu bar that contains the date and the title of the app
   // create a search bar in the middile to search for country data
   return (
     <div className="App">
-      <Wrapper date={date}/>
-      <Home />
-      <About />
-      <Contact />
+      <Wrapper date={date} handleRedirect={onRedirect}/>
+      {renderView()}
     </div>
   );
 }
