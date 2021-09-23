@@ -3,16 +3,16 @@ import "./MenuBar.css";
 function MenuBar (props) {
   return (
     <div className="Menu-wrapper">
-      <div>
+      <h2 className="item">
         COVID-19 Tracker
-      </div>
-      <div>
+      </h2>
+      <h2 className="item">
         {props.date}
-      </div>
+      </h2>
       {props.items.map(d => (
         <div
           onClick={(e) => props.handleClick(d)}
-          className={d.active ? 'active' : ''}
+          className= { `item ${d.active ? 'active' : ''}` }
           key={d.label}
         >
           {d.label}

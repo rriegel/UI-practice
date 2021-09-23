@@ -6,12 +6,12 @@ import getItems from './items';
 function Wrapper (props) {
   const [items, setItems] = useState(getItems());
 
-  const onHandleClick = d => {
+  const onHandleClick = (d) => {
     items.forEach(b => (b.active = false));
     d.active = true;
     setItems([...items]);
   }
-
+  console.log(items)
   return (
     <div className="MenuWrapper">
       <MenuBar handleClick={onHandleClick} items={items} date={props.date}/>
