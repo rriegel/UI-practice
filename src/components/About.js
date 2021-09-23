@@ -1,7 +1,12 @@
 function About() {
-  return(
+
+  return (
     <div className="Global">
-      About
+      <header className="Global-header">
+        <h1>
+          Ryan Riegel
+        </h1>
+      </header>
     </div>
   )
 };
