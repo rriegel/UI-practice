@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import Wrapper from './components/Wrapper';
 import {useState, useEffect} from 'react';
 
 function App() {
@@ -24,12 +25,9 @@ function App() {
   // create a search bar in the middile to search for country data
   return (
     <div>
-
+      <Wrapper date={date}/>
       <div className="Global">
         <header className="Global-header">
-          <h1>
-            {date}
-          </h1>
           <h1>
             Global
           </h1>

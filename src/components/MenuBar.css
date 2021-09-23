@@ -1,0 +1,4 @@
+.Menu-wrapper {
+  display: flexbox;
+  flex-direction: row;
+}
