@@ -1,6 +1,4 @@
 function About() {
-
-
   return(
     <div className="Global">
       About
