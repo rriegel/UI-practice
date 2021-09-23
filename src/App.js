@@ -13,13 +13,15 @@ function App() {
       setGlobal(result.data.Global);
       let date = new Date(result.data.Global.Date);
       date = date.toString().split(' ');
-      setDate(date.slice(0, 5).join(' '));
+      setDate(date.slice(0, 4).join(' '));
     }
     getGlobal();
   }, [date]);
 
   console.log(global);
-
+  // create a top bar that contains the date and the title of the app
+  // create a sidebar with the global data
+  // create a search bar in the middile to search for country data
   return (
     <div>
 
