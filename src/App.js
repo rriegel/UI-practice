@@ -4,7 +4,8 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import Wrapper from './components/Wrapper';
 import Home from './components/Home';
-
+import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   // const [view, setView] = useState("Home");
@@ -28,23 +29,8 @@ function App() {
     <div className="App">
       <Wrapper date={date}/>
       <Home />
-      <div>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello World.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-
+      <About />
+      <Contact />
     </div>
   );
 }

@@ -17,7 +17,7 @@ function Home() {
     <div className="Global">
       <header className="Global-header">
         <h1>
-          Global
+          Global Stats Today
         </h1>
         <p>
           New Confirmed Cases: {global.NewConfirmed}
