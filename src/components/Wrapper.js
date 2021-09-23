@@ -11,7 +11,6 @@ function Wrapper (props) {
     d.active = true;
     setItems([...items]);
   }
-  console.log(items)
   return (
     <div className="MenuWrapper">
       <MenuBar handleClick={onHandleClick} items={items} date={props.date}/>
