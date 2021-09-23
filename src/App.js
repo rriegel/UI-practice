@@ -7,6 +7,8 @@ import Home from './components/Home';
 
 
 function App() {
+  // const [view, setView] = useState("Home");
+
   const [date, setDate] = useState("");
   useEffect(() => {
     const getGlobal = async () => {
@@ -21,7 +23,6 @@ function App() {
 
   console.log(global);
   // menu bar that contains the date and the title of the app
-  // create a sidebar with the global data
   // create a search bar in the middile to search for country data
   return (
     <div className="App">

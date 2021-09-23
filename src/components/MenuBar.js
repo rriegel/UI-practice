@@ -12,7 +12,7 @@ function MenuBar (props) {
       {props.items.map(d => (
         <div
           onClick={(e) => props.handleClick(d)}
-          className= { `item ${d.active ? 'active' : ''}` }
+          className= { `item tab ${d.active ? 'active' : ''}` }
           key={d.label}
         >
           {d.label}
