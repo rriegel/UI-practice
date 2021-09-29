@@ -1,7 +1,8 @@
 import "./MenuBar.css";
 import Search from "./Search";
 
-function MenuBar ({date, items, tabClick}) {
+function MenuBar ({date, items, tabClick, countrySelect}) {
+
   return (
     <div className="Menu-wrapper">
       <div className="item inner-wrapper">
@@ -12,7 +13,9 @@ function MenuBar ({date, items, tabClick}) {
           {date}
         </h2>
       </div>
-      <Search />
+
+      <Search countrySelect={countrySelect} />
+
       <div className="item inner-wrapper">
         {items.map(d => (
           <div

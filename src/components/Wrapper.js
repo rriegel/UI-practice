@@ -5,16 +5,18 @@ import getItems from './items';
 function Wrapper ({handleRedirect, date}) {
   const [items, setItems] = useState(getItems());
 
-  const onTabClick = (d) => {
+  const onTabClick = (e) => {
     items.forEach(b => (b.active = false));
-    d.active = true;
+    e.active = true;
     setItems([...items]);
-    handleRedirect(d);
+    handleRedirect(e);
   }
+
+  const onCountrySelect = (e) => handleRedirect(e);
 
   return (
     <div>
-      <MenuBar tabClick={onTabClick} items={items} date={date}/>
+      <MenuBar tabClick={onTabClick} countrySelect={onCountrySelect} items={items} date={date}/>
     </div>
   )
 }

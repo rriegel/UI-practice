@@ -11,8 +11,8 @@ function App() {
   const [view, setView] = useState("Home");
   const [date, setDate] = useState("");
 
-  const onRedirect = (d) => {
-    setView(d.label);
+  const onRedirect = (e) => {
+    setView(e.label || e);
   };
 
   const renderView = () => {
@@ -23,7 +23,8 @@ function App() {
     } else if (view === "Contact") {
       return (<Contact />);
     } else {
-      return (<Country />);
+      console.log(view)
+      return (<Country country={view}/>);
     }
   };
 

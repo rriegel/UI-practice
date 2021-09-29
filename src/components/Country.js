@@ -2,14 +2,14 @@ import './Content.css';
 // import { useState, useEffect } from 'react';
 // import axios from 'axios';
 
-function Country(props) {
+function Country({country}) {
 
   // const [countryStats, getCountryStats] = useState({});
-
+  console.log(country);
   return(
     <div className="Content">
       <h1>
-        Country
+        {country}
       </h1>
     </div>
   )

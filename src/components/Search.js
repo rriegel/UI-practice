@@ -8,7 +8,7 @@ getCountries()
 .then(res => countries = res.data)
 .catch(err => console.log(err));
 
-function Search () {
+function Search({countrySelect}) {
 
   let [searching, toggleSearch] = useState(false);
   var [filteredCountries, setFilter] = useState([]);
@@ -21,7 +21,9 @@ function Search () {
   }
 
   const handleClick = (e) => {
-    // let slug = e.target.attributes[1].nodeValue;
+    let slug = e.target.dataset.slug;
+    toggleSearch(false);
+    countrySelect(slug);
   }
 
   const renderList = () => {
@@ -33,7 +35,7 @@ function Search () {
               className="search-item"
               onClick={handleClick}
               key={key}
-              value={entry.Slug}>
+              data-slug={entry.Slug}>
               {entry.Country}
             </div>
           )

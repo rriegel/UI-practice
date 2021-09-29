@@ -2,7 +2,7 @@ import './Content.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
-function Home(props) {
+function Home({setDate}) {
 
   const [globalStats, setGlobal] = useState({});
 
@@ -13,10 +13,10 @@ function Home(props) {
       setGlobal(result.data.Global);
       let date = new Date(result.data.Global.Date);
       date = date.toString().split(' ');
-      props.setDate(date.slice(0, 4).join(' '));
+      setDate(date.slice(0, 4).join(' '));
     }
     getGlobal();
-  }, [props]);
+  }, [setDate]);
 
   return(
     <div className="Content">
