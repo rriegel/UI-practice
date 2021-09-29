@@ -13,7 +13,7 @@ function Wrapper (props) {
     props.handleRedirect(d);
   }
   return (
-    <div className="Menu">
+    <div>
       <MenuBar handleClick={onHandleClick} items={items} date={props.date}/>
     </div>
   )
