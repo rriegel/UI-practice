@@ -1,0 +1,9 @@
+.search-results {
+  background-color: white;
+  color: #282c34;
+
+}
+.search-item {
+  border-style: solid;
+  border-color: whitesmoke;
+}

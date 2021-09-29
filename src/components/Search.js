@@ -1,6 +1,7 @@
+import { useState } from "react";
+import './Search.css';
 import getCountries from "./utils/getCountries";
 var countries;
-
 getCountries()
   .then(res => {
     countries = res.data;
@@ -10,23 +11,43 @@ getCountries()
   });
 
 function Search (props) {
+  let [searching, toggleSearch] = useState(false);
+  var [filteredCountries, setFilter] = useState([]);
 
   const handleChange = (e) => {
-    let searchString = e.target.value
-    console.log(countries.filter(entry => {
-      return entry.Country.includes(searchString);
+    let searchString = e.target.value.toLowerCase();
+    setFilter(countries.filter(entry => {
+      return entry.Country.toLowerCase().includes(searchString);
     }))
+  }
+  const renderList = () => {
+    if (searching && countries) {
+      return (
+        filteredCountries.map((entry, key) => {
+          return (
+            <div
+              className="search-item"
+              key={key}>
+              {entry.Country}
+            </div>)
+        })
+      )
+    }
   }
   return (
     <div className="inner-item">
       <form>
         <input
-        onChange={handleChange}
+          onChange={handleChange}
+          onClick={() => toggleSearch(!searching)}
           type="text"
           placeholder="Search Country Data"
         />
         <button type="submit">Search</button>
       </form>
+      <div className="search-results">
+        {renderList()}
+      </div>
     </div>
   )
 }
