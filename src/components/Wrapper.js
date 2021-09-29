@@ -2,18 +2,19 @@ import MenuBar from './MenuBar';
 import { useState } from 'react';
 import getItems from './items';
 
-function Wrapper (props) {
+function Wrapper ({handleRedirect, date}) {
   const [items, setItems] = useState(getItems());
 
-  const onHandleClick = (d) => {
+  const onTabClick = (d) => {
     items.forEach(b => (b.active = false));
     d.active = true;
     setItems([...items]);
-    props.handleRedirect(d);
+    handleRedirect(d);
   }
+
   return (
     <div>
-      <MenuBar handleClick={onHandleClick} items={items} date={props.date}/>
+      <MenuBar tabClick={onTabClick} items={items} date={date}/>
     </div>
   )
 }

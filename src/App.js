@@ -5,6 +5,7 @@ import Wrapper from './components/Wrapper';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Country from './components/Country';
 
 function App() {
   const [view, setView] = useState("Home");
@@ -19,8 +20,10 @@ function App() {
       return (<Home setDate={setDate}/>);
     } else if (view === "About") {
       return (<About />);
-    } else {
+    } else if (view === "Contact") {
       return (<Contact />);
+    } else {
+      return (<Country />);
     }
   };
 

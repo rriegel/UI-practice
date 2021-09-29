@@ -1,7 +1,7 @@
 import "./MenuBar.css";
 import Search from "./Search";
 
-function MenuBar (props) {
+function MenuBar ({date, items, tabClick}) {
   return (
     <div className="Menu-wrapper">
       <div className="item inner-wrapper">
@@ -9,14 +9,14 @@ function MenuBar (props) {
           COVID-19 Tracker
         </h2>
         <h2 className="inner-item">
-          {props.date}
+          {date}
         </h2>
       </div>
       <Search />
       <div className="item inner-wrapper">
-        {props.items.map(d => (
+        {items.map(d => (
           <div
-            onClick={(e) => props.handleClick(d)}
+            onClick={(e) => tabClick(d)}
             className= { `inner-item tab ${d.active ? 'active' : ''}` }
             key={d.label}
           >

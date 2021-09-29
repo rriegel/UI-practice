@@ -1,16 +1,14 @@
 import { useState } from "react";
 import './Search.css';
 import getCountries from "./utils/getCountries";
-var countries;
-getCountries()
-  .then(res => {
-    countries = res.data;
-  })
-  .catch(err => {
-    console.log(err);
-  });
 
-function Search (props) {
+var countries;
+
+getCountries()
+.then(res => countries = res.data)
+.catch(err => console.log(err));
+
+function Search () {
 
   let [searching, toggleSearch] = useState(false);
   var [filteredCountries, setFilter] = useState([]);
@@ -22,6 +20,10 @@ function Search (props) {
     }))
   }
 
+  const handleClick = (e) => {
+    // let slug = e.target.attributes[1].nodeValue;
+  }
+
   const renderList = () => {
     if (searching && countries) {
       return (
@@ -29,9 +31,12 @@ function Search (props) {
           return (
             <div
               className="search-item"
-              key={key}>
+              onClick={handleClick}
+              key={key}
+              value={entry.Slug}>
               {entry.Country}
-            </div>)
+            </div>
+          )
         })
       )
     }
@@ -45,7 +50,6 @@ function Search (props) {
           type="text"
           placeholder="Search Country Data"
         />
-        <button type="submit">Search</button>
       </form>
       <div className="search-results">
         {renderList()}

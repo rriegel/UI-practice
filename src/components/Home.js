@@ -2,8 +2,6 @@ import './Content.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
-
-
 function Home(props) {
 
   const [globalStats, setGlobal] = useState({});

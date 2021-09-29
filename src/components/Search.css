@@ -6,4 +6,5 @@
 .search-item {
   border-style: solid;
   border-color: whitesmoke;
+  cursor: pointer;
 }
