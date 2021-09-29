@@ -2,7 +2,6 @@
 import './App.css';
 import {useState} from 'react';
 import Wrapper from './components/Wrapper';
-import Search from './components/Search';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';

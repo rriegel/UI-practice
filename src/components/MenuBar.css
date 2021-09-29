@@ -12,11 +12,14 @@
 }
 .item {
   color: white;
-  flex-grow: 1;
+  flex-grow: 4;
   height: 40px;
   margin: 10px;
   width: 75px;
   text-align: center;
   vertical-align: middle;
   line-height: 40px;
+}
+.smaller {
+  flex-grow: 1;
 }
