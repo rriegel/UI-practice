@@ -1,8 +1,7 @@
-import "./Search.css";
 
 function Search (props) {
   return (
-    <div className="inner-item Search">
+    <div className="inner-item">
       <form>
         <input
           type="text"
