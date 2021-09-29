@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function Home(props) {
 
-  const [global, setGlobal] = useState({});
+  const [globalStats, setGlobal] = useState({});
   useEffect(() => {
     const getGlobal = async () => {
       const url = 'https://api.covid19api.com/summary';
@@ -23,19 +23,16 @@ function Home(props) {
         Global Stats Today
       </h1>
       <p>
-        New Confirmed Cases: {global.NewConfirmed}
+        New Confirmed Cases: {globalStats.NewConfirmed}
       </p>
       <p>
-        New Confirmed Cases: {global.NewConfirmed}
+        Total Confirmed Cases: {globalStats.TotalConfirmed}
       </p>
       <p>
-        Total Confirmed Cases: {global.TotalConfirmed}
+        New Deaths: {globalStats.NewDeaths}
       </p>
       <p>
-        New Deaths: {global.NewDeaths}
-      </p>
-      <p>
-        Total Deaths: {global.TotalDeaths}
+        Total Deaths: {globalStats.TotalDeaths}
       </p>
     </div>
   )
