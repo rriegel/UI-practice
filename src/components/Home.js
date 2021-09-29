@@ -2,9 +2,12 @@ import './Content.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
+
+
 function Home(props) {
 
   const [globalStats, setGlobal] = useState({});
+
   useEffect(() => {
     const getGlobal = async () => {
       const url = 'https://api.covid19api.com/summary';
