@@ -11,6 +11,7 @@ getCountries()
   });
 
 function Search (props) {
+
   let [searching, toggleSearch] = useState(false);
   var [filteredCountries, setFilter] = useState([]);
 
@@ -20,6 +21,7 @@ function Search (props) {
       return entry.Country.toLowerCase().includes(searchString);
     }))
   }
+
   const renderList = () => {
     if (searching && countries) {
       return (

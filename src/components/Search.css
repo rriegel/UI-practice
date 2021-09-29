@@ -1,7 +1,7 @@
 .search-results {
   background-color: white;
   color: #282c34;
-
+  overflow: auto;
 }
 .search-item {
   border-style: solid;
