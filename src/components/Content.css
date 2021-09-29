@@ -1,6 +1,8 @@
-.Global-header {
+.Content {
   background-color: #282c34;
+  box-shadow: 0 0 40px rgb(92, 92, 92);
   min-height: 100vh;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;

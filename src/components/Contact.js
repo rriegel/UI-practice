@@ -1,7 +1,11 @@
+import './Content.css';
+
 function Contact() {
   return(
-    <div className="Global">
-      Contact
+    <div className="Content">
+      <h1>
+        Ryan Riegel
+      </h1>
     </div>
   )
 };

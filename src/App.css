@@ -2,7 +2,11 @@
   width: auto;
   text-align: center;
 }
-
+.background {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

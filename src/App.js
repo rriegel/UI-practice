@@ -18,9 +18,9 @@ function App() {
     if (view === "Home") {
       return (<Home setDate={setDate}/>);
     } else if (view === "About") {
-      return (<Contact />);
-    } else {
       return (<About />);
+    } else {
+      return (<Contact />);
     }
   };
 
@@ -28,9 +28,12 @@ function App() {
   // menu bar that contains the date and the title of the app
   // create a search bar in the middile to search for country data
   return (
+
     <div className="App">
       <Wrapper date={date} handleRedirect={onRedirect}/>
-      { renderView() }
+      <div className="background">
+        { renderView() }
+      </div>
     </div>
   );
 }

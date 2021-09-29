@@ -1,4 +1,4 @@
-import './Home.css';
+import './Content.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
@@ -18,27 +18,25 @@ function Home(props) {
   }, [props]);
 
   return(
-    <div className="Global">
-      <header className="Global-header">
-        <h1>
-          Global Stats Today
-        </h1>
-        <p>
-          New Confirmed Cases: {global.NewConfirmed}
-        </p>
-        <p>
-          New Confirmed Cases: {global.NewConfirmed}
-        </p>
-        <p>
-          Total Confirmed Cases: {global.TotalConfirmed}
-        </p>
-        <p>
-          New Deaths: {global.NewDeaths}
-        </p>
-        <p>
-          Total Deaths: {global.TotalDeaths}
-        </p>
-      </header>
+    <div className="Content">
+      <h1>
+        Global Stats Today
+      </h1>
+      <p>
+        New Confirmed Cases: {global.NewConfirmed}
+      </p>
+      <p>
+        New Confirmed Cases: {global.NewConfirmed}
+      </p>
+      <p>
+        Total Confirmed Cases: {global.TotalConfirmed}
+      </p>
+      <p>
+        New Deaths: {global.NewDeaths}
+      </p>
+      <p>
+        Total Deaths: {global.TotalDeaths}
+      </p>
     </div>
   )
 };
