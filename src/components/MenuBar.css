@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #474f5e;
   box-shadow: 0 0 40px black;
 }
@@ -11,15 +11,20 @@
   cursor: pointer;
 }
 .item {
+  flex-grow: 1;
+  width: 140px;
+}
+.inner-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.inner-item {
   color: white;
-  flex-grow: 4;
+  flex-grow: 1;
   height: 40px;
+  width: 10px;
   margin: 10px;
-  width: 75px;
+  line-height: 40px;
   text-align: center;
   vertical-align: middle;
-  line-height: 40px;
-}
-.smaller {
-  flex-grow: 1;
 }

@@ -2,7 +2,7 @@ import "./Search.css";
 
 function Search (props) {
   return (
-    <div className="item Search">
+    <div className="inner-item Search">
       <form>
         <input
           type="text"

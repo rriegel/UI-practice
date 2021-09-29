@@ -1,5 +1,4 @@
 import MenuBar from './MenuBar';
-import './Wrapper.css';
 import { useState } from 'react';
 import getItems from './items';
 
