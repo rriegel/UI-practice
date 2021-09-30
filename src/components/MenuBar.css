@@ -7,9 +7,6 @@
   background-color: #474f5e;
   box-shadow: 0 0 40px black;
 }
-.tab {
-  cursor: pointer;
-}
 .item {
   flex-grow: 1;
   width: 140px;
@@ -27,4 +24,10 @@
   line-height: 40px;
   text-align: center;
   vertical-align: middle;
+}
+.tab {
+  cursor: pointer;
+}
+.inner-item.tab:hover {
+  color: rgb(1, 178, 190);
 }

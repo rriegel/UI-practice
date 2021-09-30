@@ -19,7 +19,7 @@ function MenuBar ({date, items, tabClick, countrySelect}) {
       <div className="item inner-wrapper">
         {items.map(d => (
           <div
-            onClick={(e) => tabClick(d)}
+            onClick={() => tabClick(d)}
             className= { `inner-item tab ${d.active ? 'active' : ''}` }
             key={d.label}
           >
