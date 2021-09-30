@@ -5,7 +5,6 @@ import './Content.css';
 function Country({country}) {
 
   // const [countryStats, getCountryStats] = useState({});
-  console.log(country);
   return(
     <div className="Content">
       <h1>
