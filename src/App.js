@@ -23,7 +23,6 @@ function App() {
     } else if (view === "Contact") {
       return (<Contact />);
     } else {
-      console.log(view)
       return (<Country country={view}/>);
     }
   };

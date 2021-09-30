@@ -4,7 +4,8 @@ import './Content.css';
 
 function Country({country}) {
 
-  // const [countryStats, getCountryStats] = useState({});
+  // const [basicInfo, getBasic] = useState({});
+
   return(
     <div className="Content">
       <h1>
