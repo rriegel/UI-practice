@@ -2,7 +2,7 @@ import './Content.css';
 // import { useState, useEffect } from 'react';
 // import axios from 'axios';
 
-function Country({country}) {
+function Country({ country }) {
 
   // const [basicInfo, getBasic] = useState({});
 

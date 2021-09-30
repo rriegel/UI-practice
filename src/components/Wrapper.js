@@ -2,7 +2,7 @@ import MenuBar from './MenuBar';
 import { useState } from 'react';
 import getItems from './items';
 
-function Wrapper ({handleRedirect, date}) {
+function Wrapper ({ handleRedirect, date }) {
   const [items, setItems] = useState(getItems());
 
   const onTabClick = (e) => {
@@ -16,7 +16,12 @@ function Wrapper ({handleRedirect, date}) {
 
   return (
     <div>
-      <MenuBar tabClick={onTabClick} countrySelect={onCountrySelect} items={items} date={date}/>
+      <MenuBar
+        tabClick={ onTabClick }
+        countrySelect={ onCountrySelect }
+        items={ items }
+        date={ date }
+      />
     </div>
   )
 }

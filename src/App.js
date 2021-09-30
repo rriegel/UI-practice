@@ -1,6 +1,5 @@
-// import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
+import { useState } from 'react';
 import Wrapper from './components/Wrapper';
 import Home from './components/Home';
 import About from './components/About';
@@ -17,23 +16,20 @@ function App() {
 
   const renderView = () => {
     if (view === "Home") {
-      return (<Home setDate={setDate}/>);
+      return (<Home setDate={ setDate }/>);
     } else if (view === "About") {
       return (<About />);
     } else if (view === "Contact") {
       return (<Contact />);
     } else {
-      return (<Country country={view}/>);
+      return (<Country country={ view }/>);
     }
   };
 
-  console.log(global);
-  // menu bar that contains the date and the title of the app
-  // create a search bar in the middile to search for country data
   return (
 
     <div className="App">
-      <Wrapper date={date} handleRedirect={onRedirect}/>
+      <Wrapper date={ date } handleRedirect={ onRedirect }/>
       <div className="background">
         { renderView() }
       </div>

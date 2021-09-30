@@ -1,7 +1,7 @@
 import "./MenuBar.css";
 import Search from "./Search";
 
-function MenuBar ({date, items, tabClick, countrySelect}) {
+function MenuBar ({ date, items, tabClick, countrySelect }) {
 
   return (
     <div className="Menu-wrapper">
@@ -10,20 +10,20 @@ function MenuBar ({date, items, tabClick, countrySelect}) {
           COVID-19 Tracker
         </h2>
         <h2 className="inner-item">
-          {date}
+          { date }
         </h2>
       </div>
 
-      <Search countrySelect={countrySelect} />
+      <Search countrySelect={ countrySelect } />
 
       <div className="item inner-wrapper">
-        {items.map(d => (
+        {items.map((d, key) => (
           <div
-            onClick={() => tabClick(d)}
+            onClick={ () => tabClick(d) }
             className= { `inner-item tab ${d.active ? 'active' : ''}` }
-            key={d.label}
+            key={ key }
           >
-            {d.label}
+            { d.label }
           </div>
         ))}
       </div>

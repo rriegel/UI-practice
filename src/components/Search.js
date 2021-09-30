@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import './Search.css';
 import getCountries from "./utils/getCountries";
 
@@ -8,7 +8,7 @@ getCountries()
 .then(res => countries = res.data)
 .catch(err => console.log(err));
 
-function Search({countrySelect}) {
+function Search({ countrySelect }) {
 
   let [searching, toggleSearch] = useState(false);
   var [filteredCountries, setFilter] = useState([]);
@@ -22,9 +22,22 @@ function Search({countrySelect}) {
 
   const handleClick = (e) => {
     let slug = e.target.dataset.slug;
-    toggleSearch(false);
     countrySelect(slug);
   }
+
+  const searchRef = useRef(null);
+
+  // logic to detect if click is in or out of searchbar
+  useEffect(() => {
+    function handler(e) {
+      if (!searchRef.current?.contains(e.target)) {
+        searchRef.current.value = "";
+        toggleSearch(false);
+      }
+    }
+    window.addEventListener('click', handler)
+    return () => window.removeEventListener('click', handler)
+  }, []);
 
   const renderList = () => {
     if (searching && countries) {
@@ -33,10 +46,10 @@ function Search({countrySelect}) {
           return (
             <div
               className="search-item"
-              onClick={handleClick}
-              key={key}
-              data-slug={entry.Slug}>
-              {entry.Country}
+              onClick={ handleClick }
+              key={ key }
+              data-slug={ entry.Slug }>
+              { entry.Country }
             </div>
           )
         })
@@ -48,14 +61,15 @@ function Search({countrySelect}) {
     <div className="inner-item">
       <form>
         <input
-          onChange={handleChange}
-          onClick={() => toggleSearch(!searching)}
+          ref={ searchRef }
+          onChange={ handleChange }
+          onClick={ () => toggleSearch(true) }
           type="text"
           placeholder="Search Country Data"
         />
       </form>
       <div className="search-results">
-        {renderList()}
+        { renderList() }
       </div>
     </div>
   )
