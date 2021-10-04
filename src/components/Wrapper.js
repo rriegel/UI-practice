@@ -16,12 +16,14 @@ function Wrapper ({ handleRedirect, date }) {
 
   return (
     <div>
+
       <MenuBar
         tabClick={ onTabClick }
         countrySelect={ onCountrySelect }
         items={ items }
         date={ date }
       />
+
     </div>
   )
 }
