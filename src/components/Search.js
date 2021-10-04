@@ -30,7 +30,7 @@ function Search({ countrySelect }) {
   // logic to detect if click is in or out of searchbar
   useEffect(() => {
     function handler(e) {
-      if (!searchRef.current.contains(e.target)) {
+      if (!searchRef.current?.contains(e.target)) {
         searchRef.current.value = "";
         toggleSearch(false);
       }
