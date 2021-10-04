@@ -5,6 +5,7 @@ function MenuBar ({ date, items, tabClick, countrySelect }) {
 
   return (
     <div className="Menu-wrapper">
+
       <div className="item inner-wrapper">
         <h2 className="inner-item">
           COVID-19 Tracker
@@ -27,6 +28,7 @@ function MenuBar ({ date, items, tabClick, countrySelect }) {
           </div>
         ))}
       </div>
+
     </div>
   )
 }
